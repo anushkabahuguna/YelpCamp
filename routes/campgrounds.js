@@ -5,7 +5,7 @@ var Mycamp  = require("../models/campgrounds");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding"),
-geocodingClient = mbxGeocoding({accessToken : " pk.eyJ1IjoiYW51c2hrYWJhaHVndW5hIiwiYSI6ImNrY2F0Mmt3ZTF5bGUydG8wb20xcm44ZHoifQ.UtZYdlNq7Na06vmHIQRlaA" });
+geocodingClient = mbxGeocoding({accessToken : "pk.eyJ1IjoiYW51c2hrYWJhaHVndW5hIiwiYSI6ImNrY2F0Mmt3ZTF5bGUydG8wb20xcm44ZHoifQ.UtZYdlNq7Na06vmHIQRlaA" });
 
 const axios = require('axios');
 	 
