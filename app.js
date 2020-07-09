@@ -16,7 +16,7 @@ const axios = require('axios');
 
 
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding"),
-geocodingClient = mbxGeocoding({accessToken : process.env.MAPBOX_TOKEN });
+geocodingClient = mbxGeocoding({accessToken : "pk.eyJ1IjoiYW51c2hrYWJhaHVndW5hIiwiYSI6ImNrY2F0M2gwazF3MG4zMHFwY29scXIxNXYifQ.Cd0Yd8s_ZW6S7PR-B9timg" });
 	 
 var commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
