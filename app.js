@@ -22,7 +22,7 @@ var commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes   = require("./routes/index");
 
-mongoose.connect("mongodb+srv://anushkabahuguna:" + process.env.MONGO_ATLAS_PASSWORD +  "@cluster0.b2irn.mongodb.net/yelp_camp?retryWrites=true&w=majority", 
+mongoose.connect("mongodb+srv://anushkabahuguna:lDkdTaatgKbLz4eF@cluster0.b2irn.mongodb.net/yelp_camp?retryWrites=true&w=majority", 
 				 { useNewUrlParser: true,
 				  useUnifiedTopology: true,
 				  useCreateIndex : true}).then(() => {
