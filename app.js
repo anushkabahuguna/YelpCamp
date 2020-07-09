@@ -21,17 +21,16 @@ geocodingClient = mbxGeocoding({accessToken : "pk.eyJ1IjoiYW51c2hrYWJhaHVndW5hIi
 var commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes   = require("./routes/index");
-mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true, useUnifiedTopology: true});
-console.log(process.env.DATABASEURL);
 
-// mongoose.connect("mongodb+srv://anushkabahuguna:lDkdTaatgKbLz4eF@cluster0.b2irn.mongodb.net/yelp_camp?retryWrites=true&w=majority", 
-// 				 { useNewUrlParser: true,
-// 				  useUnifiedTopology: true,
-// 				  useCreateIndex : true}).then(() => {
-// 	console.log("connected to db");
-// }).catch(err =>{
-// 	console.log(err.message);
-// });
+
+mongoose.connect(process.env.DATABASEURL, 
+				 { useNewUrlParser: true,
+				  useUnifiedTopology: true,
+				  useCreateIndex : true}).then(() => {
+	console.log("connected to db");
+}).catch(err =>{
+	console.log(err.message);
+});
 
 
 
