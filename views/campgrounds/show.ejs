@@ -1,0 +1,137 @@
+<%- include("../partials/header") %>
+
+
+<div class="container">
+	
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">Yelp Camp</p>
+			<div class ="list-group">
+				<li class="list-group-item active">Info 1</li>
+				<li class="list-group-item">Info 2</li>
+				<li class="list-group-item">Info 3</li>
+			</div>
+		
+				<div id="map">
+		 <!-- map comes here - -->
+			</div>
+
+			
+		</div>
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%= found.image %>" >
+				<div class="caption-full">
+					<h4 class="pull-right">Rs. <%= found.price %>/night</h4>
+					<h4><a><%= found.name %></a></h4>
+					<p><%= found.description %></p>
+				<p>
+  				<em>Submitted by: <%= found.author.username %>, <%= moment(found.createdAt).fromNow() %>					</em>
+				</p>
+					<% 	if(currentUser && currentUser._id.equals(found.author.id)){ %>
+						<a class="btn btn-xs btn-warning" href="/campgrounds/<%=  found._id %>/edit">Edit </a>
+						<form class="delete-form" action="/campgrounds/<%= found._id %>?_method=DELETE" 
+							  method="POST">
+							<button class="btn btn-xs  btn-danger" >DELETE</button>
+						</form>
+					<% } %>
+					
+				</div>
+			</div>
+			
+			<div class="well">
+				<div class="text-right">
+					<a class="btn  btn-success" href= "/campgrounds/<%= found._id %>/comments/new">
+						Add a new comment </a>
+				</div>
+				<hr>
+				<% found.comments.forEach(function(x){ %>
+				<div class="row">
+					<div class="col-md-12">
+					 <strong><%= x.author.username %></strong>
+						<span class="pull-right"><%= moment(x.createdAt).fromNow() %></span>	
+							<p><%= x.text %></p>
+						
+							<% 	if(currentUser && currentUser._id.equals(x.author.id)){ %>
+							<a class="btn btn-xs btn-warning" 
+							   href="/campgrounds/<%= found._id %>/comments/<%= x._id %>/edit">Edit
+							</a>
+							<form class="delete-form" 
+								  action="/campgrounds/<%= found._id %>/comments/<%= x._id %>?_method=DELETE"
+								  method="POST">
+								<input type="submit" class="btn btn-xs btn-danger" value="Delete">
+						</form>
+						<% } %>
+					</div>
+				</div>
+				<% }); %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	
+	
+ var camp =<%- JSON.stringify(found) %>;
+	
+mapboxgl.accessToken = <%- JSON.stringify(process.env.MAPBOX_D_TOKEN) %>;
+
+
+
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/light-v10',
+  center: camp.coordinates,
+  zoom: 7
+});
+
+// code from the next step will go here!
+	
+// 	var geojson = {
+//   type: 'FeatureCollection',
+//   features: [{
+//     type: 'Feature',
+//     geometry: {
+//       type: 'Point',
+//       coordinates: [-77.032, 38.913]
+//     },
+//     properties: {
+//       title: 'Mapbox',
+//       description: 'Washington, D.C.'
+//     }
+//   },
+//   {
+//     type: 'Feature',
+//     geometry: {
+//       type: 'Point',
+//       coordinates: [-122.414, 37.776]
+//     },
+//     properties: {
+//       title: 'Mapbox',
+//       description: 'San Francisco, California'
+//     }
+//   }]
+// };
+
+	// add markers to map
+// geojson.features.forEach(function(marker) {
+
+  // create a HTML element for each feature
+// 	create a html element for our camps location
+  var el = document.createElement('div');
+  el.className = 'marker';
+
+  // make a marker forour location and add to the map
+  new mapboxgl.Marker(el)
+    // .setLngLat(marker.geometry.coordinates)
+	.setLngLat(camp.coordinates)
+	.setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML('<h3>' + camp.name + '</h3><p>' + camp.location + '</p>'))
+    .addTo(map);
+// });
+
+</script>
+
+		
+<%- include("../partials/footer") %>

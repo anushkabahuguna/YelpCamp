@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Yelp Camp</title>
+		<meta name="viewport" content="initial-scale=1,maximum- scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<!-- this means go back to root folder and we have defined public there so we write like this -->
+		<link rel="stylesheet" href="/stylesheets/main.css"> 
+		
+		<!-- MAPBOX API LINKS -->
+		
+<!-- Mapbox API links -->
+		
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css' rel='stylesheet' />
+		
+	</head>
+	<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">YelpCamp</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<% if(!currentUser){ %>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/register">Sign Up</a></li>
+				<%	} else{ %>
+						<li><a href="#">Signed In As <%= currentUser.username %></a></li>
+						<li><a href="/logout">Logout</a></li>
+						
+					<% } %>
+					
+				</ul>
+				
+			</div>
+			
+		</div>
+
+	</nav>
+
+<!-- navbar end -->
+
+	<div class="container">
+<!-- we check the length as well becauase even if there is no error the red box will still show which we only want it to be 
+seen when there IS AN ERROR -->
+		<% if(error && error.length > 0){ %>
+		<div class="alert alert-danger" role="alert">
+			<%= error %>
+		</div>
+		<% }if (success && success.length > 0){ %>
+			<div class="alert alert-success" role="alert">
+			<%= success %>
+		</div>
+		
+		<% } %>
+	</div>
+		
