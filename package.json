@@ -1,11 +1,11 @@
 {
-  "start": "node app.js",
   "name": "yelpcampproject",
   "version": "1.0.0",
   "description": "MY YELP CAMP PROJECT SELF-MADE DIRECTORY",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	  "start": "node app.js"
   },
   "author": "Anushka Bahuguna",
   "license": "ISC",
