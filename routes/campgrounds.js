@@ -5,7 +5,7 @@ var Mycamp  = require("../models/campgrounds");
 var Comment = require("../models/comment");
 var middleware = require("../middleware");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding"),
-geocodingClient = mbxGeocoding({accessToken : "pk.eyJ1IjoiYW51c2hrYWJhaHVndW5hIiwiYSI6ImNrY2F0Mmt3ZTF5bGUydG8wb20xcm44ZHoifQ.UtZYdlNq7Na06vmHIQRlaA" });
+geocodingClient = mbxGeocoding({accessToken : process.env.MAPBOX_D_TOKEN });
 
 const axios = require('axios');
 	 
@@ -192,7 +192,7 @@ router.put("/:id", middleware.checkCampgroundOwnership, function(req, res){
 	async function getUser() {
   try {
 	  
-   const response = await axios.get('https://api.mapbox.com/geocoding/v5/mapbox.places/' + req.body.campground.location + '.json?access_token=pk.eyJ1IjoiYW51c2hrYWJhaHVndW5hIiwiYSI6ImNrY2F0Mmt3ZTF5bGUydG8wb20xcm44ZHoifQ.UtZYdlNq7Na06vmHIQRlaA');
+   const response = await axios.get('https://api.mapbox.com/geocoding/v5/mapbox.places/' + req.body.campground.location + '.json?access_token=' + process.env.MAPBOX_D_TOKEN);
 	
 	   req.body.campground.coordinates = response.data.features[0].geometry.coordinates;
 	 

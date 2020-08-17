@@ -1,5 +1,5 @@
 require("dotenv").config();
-var express 	 = require("express"),
+const express 	 = require("express"),
 app     	 	 = express(),
 bodyParser 		 = require("body-parser"),
 mongoose 		 = require('mongoose'),
@@ -16,12 +16,12 @@ const axios = require('axios');
 
 
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding"),
-geocodingClient = mbxGeocoding({accessToken : "pk.eyJ1IjoiYW51c2hrYWJhaHVndW5hIiwiYSI6ImNrY2F0Mmt3ZTF5bGUydG8wb20xcm44ZHoifQ.UtZYdlNq7Na06vmHIQRlaA" });
+geocodingClient = mbxGeocoding({accessToken : process.env.MAPBOX_D_TOKEN });
 	 
-var commentRoutes = require("./routes/comments"),
+const commentRoutes = require("./routes/comments"),
 	campgroundRoutes = require("./routes/campgrounds"),
 	indexRoutes   = require("./routes/index");
-
+console.log(process.env.DATABASEURL);
 
 mongoose.connect(process.env.DATABASEURL, 
 				 { useNewUrlParser: true,
