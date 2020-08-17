@@ -1,7 +1,7 @@
-An App built Node.js, express and mongoDB.
+An App built on Node.js, express and mongoDB.
 Done from  the Udemy course: "The Web Developer Bootcamp by Colt Steele."
 
-Depoyed on Heroku:
+Deployed on Heroku:
 https://secure-savannah-90575.herokuapp.com
 
 Features of this app:
