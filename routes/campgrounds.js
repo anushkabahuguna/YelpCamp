@@ -120,7 +120,6 @@ router.get("/", function(req, res){
 	  
    const response = await axios.get('https://api.mapbox.com/geocoding/v5/mapbox.places/' + req.body.location + '.json?access_token=' + process.env.MAPBOX_D_TOKEN);
 	  
- console.log(process.env.MAPBOX_D_TOKEN);
 	  var newcamp = {name : req.body.name,
 				   image : req.body.image,
 				   description: req.body.description,
