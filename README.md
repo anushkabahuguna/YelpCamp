@@ -10,7 +10,7 @@
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-<b>Completed as part of the Udemy course ‘The Web Development Bootcamp’ by Colt Steele.</b>
-
 - This app features the ability to add and view campgrounds worldwide, with authentication and authorization using passportJS.
 - Users can search for campgrounds by location, price, and ratings, and view locations using the Mapbox API.
+
+<em>Completed as part of the Udemy course ‘The Web Development Bootcamp’ by Colt Steele.</em>
