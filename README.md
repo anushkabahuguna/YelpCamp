@@ -1,26 +1,16 @@
-An App built on Node.js, express and mongoDB.
-Done from  the Udemy course: "The Web Developer Bootcamp by Colt Steele."
+## Campround Website
 
-Deployed on Heroku:
-https://secure-savannah-90575.herokuapp.com
+<b>Built with</b> 
 
-Features of this app:
-Camping page, ability to add and views camps all over the world.
-Authentication
-Authorization
-Need an account to create ,comment,edit,delete post
-Search existing campgrounds
-View the location using Mapbox API.
-Flash messages
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
+<b>Completed as part of the Udemy course ‘The Web Development Bootcamp’ by Colt Steele.</b>
 
-Other features:
-Bootstrap
-method-override
-ejs
-Mapbox API
-mongoose
-passport
-passport-local-mongoose
-express-session
-connect-flash
+- This app features the ability to add and view campgrounds worldwide, with authentication and authorization using passportJS.
+- Users can search for campgrounds by location, price, and ratings, and view locations using the Mapbox API.
